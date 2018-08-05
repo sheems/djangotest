@@ -16,11 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def hello(request):
-    return HttpResponse("Hello World!")
+    return render(request, "index.html")
+def hellopython(request):
+    return render(request, "python.html")
+
+
 
 urlpatterns = [
     url(r'^$', hello),
+    url(r'^python/$', hellopython),
     url(r'^admin/', admin.site.urls),
 ]
