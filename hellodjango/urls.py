@@ -20,13 +20,17 @@ from django.shortcuts import render
 
 def hello(request):
     return render(request, "index.html")
+
 def hellopython(request):
     return render(request, "python.html")
+def hellohttp(request):
+    return render(request, "http.html")
 
 
 
 urlpatterns = [
     url(r'^$', hello),
+    url(r'^http/$', hellohttp),
     url(r'^python/$', hellopython),
     url(r'^admin/', admin.site.urls),
 ]
