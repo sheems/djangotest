@@ -15,16 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.http import HttpResponse
-from django.shortcuts import render
+from instructors.views import hello, hellohttp, hellopython, instructors_list
 
-def hello(request):
-    return render(request, "index.html")
 
-def hellopython(request):
-    return render(request, "python.html")
-def hellohttp(request):
-    return render(request, "http.html")
+
 
 
 
@@ -32,5 +26,6 @@ urlpatterns = [
     url(r'^$', hello),
     url(r'^http/$', hellohttp),
     url(r'^python/$', hellopython),
+    url(r'^instructors/$', instructors_list),
     url(r'^admin/', admin.site.urls),
 ]
